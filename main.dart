@@ -1,35 +1,32 @@
-import 'package:flutter/material.dart'; // Import Flutter Material package
+import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp()); // Run the app
+  runApp(MyApp());
 }
 
-// Root widget of the app
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Navigation Demo', // App title
-      theme: ThemeData(primarySwatch: Colors.blue), // Theme color
-      home: HomeScreen(), // Set HomeScreen as starting screen
-      debugShowCheckedModeBanner: false, // Hide debug banner
+      title: 'Navigation Demo',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
 
-// -------------------- FIRST SCREEN --------------------
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'), // App bar title
+        title: Text('Home Screen'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Go to Second Screen'), // Button label
+          child: Text('Go to Second Screen'),
           onPressed: () {
-            // Navigate to SecondScreen using push
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -43,19 +40,18 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-// -------------------- SECOND SCREEN --------------------
 class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Second Screen'), // Second screen title
+        title: Text('Second Screen'),
       ),
       body: Center(
         child: ElevatedButton(
-          child: Text('Go Back to Home'), // Button to go back
+          child: Text('Go Back to Home'),
           onPressed: () {
-            Navigator.pop(context); // Go back to previous screen
+            Navigator.pop(context);
           },
         ),
       ),
